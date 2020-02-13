@@ -11,7 +11,6 @@ for (var i = 0; i < localStorage.length; i++){
 }
 
 searchBtn.click(function(){
-    console.log("@@@@@@@@@@");
     var searchInput = $(".searchInput").val();
     var urlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
     var urlFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
