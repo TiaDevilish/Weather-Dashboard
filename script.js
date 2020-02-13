@@ -12,5 +12,17 @@ for (var i = 0; i < localStorage.length; i++){
 searchBtn.click(function(){
     var searchInput = $(".searchInput").val();
     var urlCurrent = "api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
-    var urlFiveDay = api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}
+    var urlFiveDay = "api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
+
+    if(searchInput == ""){
+        console.log(searchInput);
+    }else{
+        $.ajax({
+            url: urlCurrent,
+            method: "GET"
+        }).then(function(response){
+            var cityName = $(".list-group").addClass("list-group-item");
+            cityName.append("<li>" + response + "</li>")
+        })
+    }
 })
