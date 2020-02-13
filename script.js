@@ -13,8 +13,8 @@ for (var i = 0; i < localStorage.length; i++){
 searchBtn.click(function(){
     console.log("@@@@@@@@@@");
     var searchInput = $(".searchInput").val();
-    var urlCurrent = "api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
-    var urlFiveDay = "api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
+    var urlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
+    var urlFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
 
     if(searchInput == ""){
         console.log(searchInput);
@@ -30,4 +30,6 @@ searchBtn.click(function(){
             
         })
     }
+
+    
 })
