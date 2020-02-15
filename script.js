@@ -1,6 +1,6 @@
 var searchBtn = $(".searchBtn");
 var apiKey = "a62987b69d3f49eebbfab3e9e65b476a";
-var inputCount = 0;
+// var inputCount = 0;
 //function for when click btn save into local stor and show results
 
 for (var i = 0; i < localStorage.length; i++){
