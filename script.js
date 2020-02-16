@@ -33,8 +33,10 @@ searchBtn.click(function(){
             currentCard.append(currentCity);
 
             var time = new Date(response.dt * 1000);
-            currentCity.append(response.name + " " + time.toLocaleDateString("en-US"));
-            currentCity.append("<img src=http://openweathermap.org/img/wn/${response.wather[0].icon}@2.png>")
+            currentCity.append(response.name + " " + time.toLocaleDateString("bg"));
+            currentCity.append(`<img src="https://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png">`);
+
+            var currentTemp = currentCity.append("<p>");
         })
     }
 
