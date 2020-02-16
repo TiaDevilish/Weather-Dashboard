@@ -6,7 +6,7 @@ ul{
     text-align: justify;
 }
 li{
-    border-bottom: 1px gray solid;
+    border-bottom: 1px rgb(196, 194, 194) solid;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
@@ -16,4 +16,7 @@ li{
 img{
     width: 100px;
     height: 100px;
+}
+p{
+    font-weight: 100;
 }

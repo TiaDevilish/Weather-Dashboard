@@ -38,8 +38,9 @@ searchBtn.click(function(){
 
             var currentTemp = currentCity.append("<p>");
             currentCity.append(currentTemp);
-            currentTemp.append("<p>" + "Temperature: " + response.main.temp +"C°" + "</p>");
-
+            currentTemp.append("<p>" + "Temperature: " + response.main.temp + "°C" + "</p>");
+            
+            currentTemp.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
 
         })
     }
