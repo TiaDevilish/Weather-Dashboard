@@ -1,7 +1,5 @@
 var searchBtn = $(".searchBtn");
 var apiKey = "a62987b69d3f49eebbfab3e9e65b476a";
-// var inputCount = 0;
-//function for when click btn save into local stor and show results
 
 for (var i = 0; i < localStorage.length; i++){
     var city = localStorage.getItem(i);
@@ -24,13 +22,20 @@ searchBtn.click(function(){
         }).then(function(response){
             var cityName = $(".list-group").addClass("list-group-item");
             var storLenght = localStorage.length;
-            console.log(storLenght)
             cityName.append("<li>" + response.name + "</li>");
             var localStrg = localStorage.setItem(storLenght, response.name);
             storLenght++;
             
+            //current append to curcard
+            var currentCard = $(".currentCard").append("<div>").addClass("card-body");
+            currentCard.empty();
+            var currentCity = currentCard.append("<p>");
+            currentCard.append(currentCity);
+
+            var time = new Date(response.dt * 1000);
+            currentCity.append(response.name + " " + time.toLocaleDateString("en-US"));
+            currentCity.append("<img src=http://openweathermap.org/img/wn/10d@2x.png>")
         })
     }
 
-    
 })
