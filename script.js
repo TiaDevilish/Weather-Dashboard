@@ -34,7 +34,7 @@ searchBtn.click(function(){
 
             var time = new Date(response.dt * 1000);
             currentCity.append(response.name + " " + time.toLocaleDateString("en-US"));
-            currentCity.append("<img src=http://openweathermap.org/img/wn/10d@2x.png>")
+            currentCity.append("<img src=http://openweathermap.org/img/wn/${response.wather[0].icon}@2.png>")
         })
     }
 
