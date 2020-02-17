@@ -38,10 +38,14 @@ searchBtn.click(function(){
 
             var currentTemp = currentCity.append("<p>");
             currentCity.append(currentTemp);
-            currentTemp.append("<p>" + "Temperature: " + response.main.temp + "°C" + "</p>");
+            currentTemp.append("<p>" + "Temperature: " + response.main.temp + " °C" + "</p>");
             
-            currentTemp.append("<p>" + "Humidity: " + response.main.humidity + "%" + "</p>");
+            currentTemp.append("<p>" + "Humidity: " + response.main.humidity + " %" + "</p>");
 
+            currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
+            console.log(response.wind.speed);
+
+            var urlUV = `http://api.openweathermap.org/data/2.5/uvi?appid={appid}&lat={lat}&lon={lon}`
         })
     }
 
