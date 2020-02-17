@@ -26,7 +26,7 @@ searchBtn.click(function(){
             var localStrg = localStorage.setItem(storLenght, response.name);
             storLenght++;
             
-            //current append to curcard
+            //current
             var currentCard = $(".currentCard").append("<div>").addClass("card-body");
             currentCard.empty();
             var currentCity = currentCard.append("<p>");
@@ -57,8 +57,30 @@ searchBtn.click(function(){
             });
         });
 
+        //5day
+        $.ajax({
+            url: urlFiveDay,
+            method: "GET"
+        }).then(function (response) {
+            var day = [0, 8, 16, 24, 32];
+            var fiveDayCard = $(".fiveDayCard").addClass("card-body");
+            var fiveDayDiv = $(".fiveDay").addClass("card-text");
+            fiveDayDiv.empty();
 
-        
+            day.forEach(function (i) {
+                var FiveDayTimeUTC = new Date(response.list[i].dt * 1000);
+                FiveDayTimeUTC = FiveDayTimeUTC.toLocaleDateString("en-US");
+
+                fiveDayDiv.append("<div class=fiveDayColor>" + "<p>" + FiveDayTimeUTC + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp +  " °C" + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>" + "<hr>");
+
+
+            })
+
+        });
+
+
+
+
     }
 
 })
