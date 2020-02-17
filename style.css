@@ -17,6 +17,8 @@ img{
     width: 100px;
     height: 100px;
 }
-p{
-    font-weight: 100;
+.fiveDayCard{
+    padding: 20px;
+    margin: 10px;
 }
+
