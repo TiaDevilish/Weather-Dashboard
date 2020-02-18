@@ -71,7 +71,7 @@ searchBtn.click(function(){
                 var FiveDayTimeUTC = new Date(response.list[i].dt * 1000);
                 FiveDayTimeUTC = FiveDayTimeUTC.toLocaleDateString("en-US");
 
-                fiveDayDiv.append("<div class=fiveDayColor>" + "<p>" + FiveDayTimeUTC + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp +  " °C" + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>" + "<hr>");
+                fiveDayDiv.append("<div>" + "<p>" + FiveDayTimeUTC + "</p>" + `<img src="https://openweathermap.org/img/wn/${response.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + response.list[i].main.temp +  " °C" + "</p>" + "<p>" + "Humidity: " + response.list[i].main.humidity + "%" + "</p>" + "</div>" + "<hr>");
 
 
             })
