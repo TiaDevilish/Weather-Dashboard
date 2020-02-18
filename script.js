@@ -43,7 +43,6 @@ searchBtn.click(function(){
             currentTemp.append("<p>" + "Humidity: " + response.main.humidity + " %" + "</p>");
 
             currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
-            console.log(response.wind.speed);
 
             var urlUV = `https://api.openweathermap.org/data/2.5/uvi?appid=a62987b69d3f49eebbfab3e9e65b476a&lat=${response.coord.lat}&lon=${response.coord.lon}`;
 
