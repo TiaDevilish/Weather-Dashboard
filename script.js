@@ -10,8 +10,8 @@ for (var i = 0; i < localStorage.length; i++){
 
 searchBtn.click(function(){
     var searchInput = $(".searchInput").val();
-    var urlCurrent = "http://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
-    var urlFiveDay = "http://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
+    var urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
+    var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=metric";
 
     if(searchInput == ""){
         console.log(searchInput);
@@ -45,7 +45,7 @@ searchBtn.click(function(){
             currentTemp.append("<p>" + "Wind Speed: " + response.wind.speed + "</p>");
             console.log(response.wind.speed);
 
-            var urlUV = `http://api.openweathermap.org/data/2.5/uvi?appid=a62987b69d3f49eebbfab3e9e65b476a&lat=${response.coord.lat}&lon=${response.coord.lon}`;
+            var urlUV = `https://api.openweathermap.org/data/2.5/uvi?appid=a62987b69d3f49eebbfab3e9e65b476a&lat=${response.coord.lat}&lon=${response.coord.lon}`;
 
             $.ajax({
                 url:urlUV,
